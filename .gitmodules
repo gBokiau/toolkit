@@ -1,0 +1,4 @@
+[submodule "vendors/jadephp"]
+	path = vendors/jadephp
+	url = https://github.com/cyonite/jade.php
+	branch = master

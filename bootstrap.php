@@ -82,6 +82,18 @@ load(array(
   // vendors
   'spyc'                        => __DIR__ . DS . 'vendors' . DS . 'yaml' . DS . 'yaml.php',
   'abeautifulsite\\simpleimage' => __DIR__ . DS . 'vendors' . DS . 'abeautifulsite' . DS . 'SimpleImage.php',
+  'jade\\jade'					=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Jade.php',
+  'jade\\parser'				=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Parser.php',
+  'jade\\compiler'				=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Compiler.php',
+  'jade\\nodes\\node'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Node.php',
+  'jade\\nodes\\block'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Block.php',
+  'jade\\nodes\\each'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Each.php',
+  'jade\\nodes\\code'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Code.php',
+  'jade\\nodes\\tag'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Tag.php',
+  'jade\\nodes\\attributes'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Attributes.php',
+  'jade\\nodes\\literal'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Literal.php',
+  'jade\\nodes\\text'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Text.php',
+  'jade\\nodes\\doctype'		=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Doctype.php'
 
 ));
 
