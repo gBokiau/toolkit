@@ -271,7 +271,7 @@ thumb::$drivers['im'] = function($thumb) {
     $command[] = '-blur 0x8';
   }
 
-  $command[] = '"' . $thumb->destination->root . '"';
+  $command[] = '"' . $thumb->destination->root() . '"';
 
   exec(implode(' ', $command));
 
@@ -284,7 +284,7 @@ thumb::$drivers['im'] = function($thumb) {
 thumb::$drivers['gd'] = function($thumb) {
 
   try {
-    $img = new abeautifulsite\SimpleImage($thumb->root());
+    $img = new abeautifulsite\SimpleImage($thumb->source->root());
     $img->quality = $thumb->options['quality'];
 
     if($thumb->options['crop']) {
@@ -303,7 +303,7 @@ thumb::$drivers['gd'] = function($thumb) {
       $img->blur('gaussian', 10);
     }
 
-    @$img->save($thumb->destination->root);
+    @$img->save($thumb->destination->root());
   } catch(Exception $e) {
     $thumb->error = $e;
   }
