@@ -90,10 +90,13 @@ load(array(
   'jade\\nodes\\each'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Each.php',
   'jade\\nodes\\code'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Code.php',
   'jade\\nodes\\tag'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Tag.php',
+  'jade\\nodes\\blockcomment'	=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'BlockComment.php',
+  'jade\\nodes\\comment'	=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Comment.php',
   'jade\\nodes\\attributes'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Attributes.php',
   'jade\\nodes\\literal'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Literal.php',
   'jade\\nodes\\text'			=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Text.php',
-  'jade\\nodes\\doctype'		=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Doctype.php'
+  'jade\\nodes\\doctype'		=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Doctype.php',
+  'jade\\nodes\\mixin'		=> __DIR__ . DS . 'vendors' . DS . 'jadephp' . DS . 'src' . DS . 'Jade' . DS . 'Nodes' . DS . 'Mixin.php'
 
 ));
 
