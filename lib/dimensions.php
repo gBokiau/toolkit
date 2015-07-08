@@ -214,7 +214,20 @@ class Dimensions {
     return $this;
 
   }
+  /**
+   * Recalculates the dimensions by the width and height
+   *
+   * @param int $area the max area in square px
+   * @return object
+   */
+  public function fitInArea($area, $force = false) {
 
+    if(!$area) return $this;
+    $height = sqrt($area / $this->ratio());
+    $this->fitHeight($height, $force);
+    
+    return $this;
+  }
   /**
    * Returns a string representation of the orientation
    *

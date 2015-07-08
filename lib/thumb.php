@@ -28,6 +28,7 @@ class Thumb extends Obj {
     'blurpx'      => 10,
     'width'       => null,
     'height'      => null,
+    'area'        => null,
     'upscale'     => false,
     'crop'        => false,
     'grayscale'   => false,
@@ -48,7 +49,6 @@ class Thumb extends Obj {
    * @param array $params
    */
   public function __construct($source, $params = array()) {
-
     $this->source      = $this->result = is_a($source, 'Media') ? $source : new Media($source);
     $this->options     = array_merge(static::$defaults, $this->params($params));
     $this->destination = $this->destination();
@@ -165,6 +165,7 @@ class Thumb extends Obj {
       ($this->options['height'])  ? $this->options['height']  : 0,
       ($this->options['upscale']) ? $this->options['upscale'] : 0,
       ($this->options['crop'])    ? $this->options['crop']    : 0,
+      ($this->options['area'])    ? $this->options['area']    : 0,
        $this->options['blur'],
        $this->options['grayscale'],
        $this->options['quality']
@@ -290,7 +291,11 @@ thumb::$drivers['im'] = function($thumb) {
     $command[] = '-gravity Center -crop ' . $thumb->options['width'] . 'x' . $thumb->options['height'] . '+0+0';
   } else {
     $dimensions = clone $thumb->source->dimensions();
-    $dimensions->fitWidthAndHeight($thumb->options['width'], $thumb->options['height'], $thumb->options['upscale']);
+    if ($thumb->options['area']) {
+        $dimensions->fitInArea($thumb->options['area'], $thumb->options['upscale']);   
+    } else {
+        $dimensions->fitWidthAndHeight($thumb->options['width'], $thumb->options['height'], $thumb->options['upscale']);
+    }
     $command[] = $dimensions->width() . 'x' . $dimensions->height() . '!';
   }
 
@@ -320,7 +325,11 @@ thumb::$drivers['gd'] = function($thumb) {
       @$img->thumbnail($thumb->options['width'], $thumb->options['height']);
     } else {
       $dimensions = clone $thumb->source->dimensions();
-      $dimensions->fitWidthAndHeight($thumb->options['width'], $thumb->options['height'], $thumb->options['upscale']);
+      if ($thumb->options['area']) {
+            $dimensions->fitInArea($thumb->options['area'], $thumb->options['upscale']);   
+      } else {
+            $dimensions->fitWidthAndHeight($thumb->options['width'], $thumb->options['height'], $thumb->options['upscale']);
+      }
       @$img->resize($dimensions->width(), $dimensions->height());
     }
 
