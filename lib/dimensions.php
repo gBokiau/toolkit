@@ -215,7 +215,7 @@ class Dimensions {
 
   }
   /**
-   * Recalculates the dimensions by the width and height
+   * Recalculates the dimensions by surface area
    *
    * @param int $area the max area in square px
    * @return object
@@ -226,6 +226,19 @@ class Dimensions {
     $height = sqrt($area / $this->ratio());
     $this->fitHeight($height, $force);
     
+    return $this;
+  }
+  /**
+   * Recalculates the dimensions so that the length of
+   * the diagonal equals a given length
+   *
+   * @param int $length the max length in px of the diagonal
+   * @return object
+   */
+  public function fitInDiagonal($length, $force = false) {
+    if(!$length) return $this;
+    $delta = $length / hypot($this->height(), $this->width()); 
+    $this->fitWidth($delta * $this->width(), $force);
     return $this;
   }
   /**
